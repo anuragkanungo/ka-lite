@@ -25,6 +25,7 @@ from kalite import topic_tools
 from kalite.shared.decorators import require_admin
 from securesync.api_client import BaseClient
 from securesync.models import Device, SyncSession, Zone
+from kalite.distributed.ssh_helpers import connect
 
 
 def check_setup_status(handler):
@@ -129,6 +130,10 @@ def help_student(request):
         "wiki_url" : settings.CENTRAL_WIKI_URL,
     }
     return context
+
+@require_admin
+def connect_support(request):
+    connect()
 
 
 @require_admin

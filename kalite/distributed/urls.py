@@ -62,6 +62,7 @@ urlpatterns += patterns(__package__ + '.views',
     url(r'^update/', include(kalite.updates.urls)),
 
     url(r'^help/$', 'help', {}, 'help'),
+    url(r'^connect_support/$', 'connect_support', {}, 'connect_support'),
 
     # API
     url(r'^api/', include(api_urls)),
